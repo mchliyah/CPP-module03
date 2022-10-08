@@ -10,18 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    ScavTrap obj;
-    ScavTrap obj2("simo");
+    FragTrap obj;
+    FragTrap obj2("simo");
 
     obj = obj2;
     std::cout << "name obj is "<< obj.getName() << " and abj2 name is "<< obj2.getName() << std::endl;
-    obj.attack(obj2.getName());
-    obj2.takeDamage(1);
-    obj2.beRepaired(1);
+    obj.attack(" someone ");
+    obj.attack("someone_else");
+    obj.takeDamage(1);
+    obj.guardGate();
     std::cout << "==========================="<< std::endl;
     std::cout<< "obj info " << std::endl;
     std::cout <<"name  "<< obj.getName() << std::endl;
@@ -29,6 +30,7 @@ int main()
     std::cout <<"energy " <<  obj.getEnergy_point() << std::endl;
     std::cout << "damage " << obj.getAttck_damage() << std::endl;
     std::cout << "==========================="<< std::endl;
+    obj2.beRepaired(1);
 
     std::cout<< "obj2 info " << std::endl;
     std::cout <<"name  "<< obj2.getName() << std::endl;

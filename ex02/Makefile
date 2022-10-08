@@ -20,7 +20,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
 
 FILES = main.cpp\
 		ClapTrap.cpp\
-		ScavTrap.cpp\
+		FragTrap.cpp\
 
 
 OBJECTS =  $(FILES:.cpp=.o)
