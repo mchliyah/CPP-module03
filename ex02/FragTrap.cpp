@@ -13,32 +13,35 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(){
-    std::cout << "scav default constructor called !" << std::endl;
+    ClapTrap::SetHit(100);
+    ClapTrap::SetEnery_point(100);
+    ClapTrap::SetAttack_damage(30);
+    std::cout << "Frag default constructor called !" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name): ClapTrap(name){
     ClapTrap::SetHit(100);
-    ClapTrap::SetEnery_point(50);
-    ClapTrap::SetEnery_point(20);
-    std::cout<< "scav constructor called !"<< std::endl;
+    ClapTrap::SetEnery_point(100);
+    ClapTrap::SetAttack_damage(30);
+    std::cout<< "Frag constructor called !"<< std::endl;
 }
 
 FragTrap::FragTrap(FragTrap &scav){
     *this = scav;
-    std::cout<< "scav coppy constructor called !" << std::endl;
+    std::cout<< "Frag coppy constructor called !" << std::endl;
 }
 
-// FragTrap& FragTrap::operator = (const FragTrap &comming){
-//     Name = comming.Name;
-//     Hit= comming.Hit;
-//     Energy_points = comming.Energy_points;
-//     Attack_damage = comming.Attack_damage;
-//     std::cout<< "scav assigne called" << std::endl;
-//     return (*this);
-// }
+FragTrap& FragTrap::operator = (const FragTrap &comming){
+    SetName(comming.getName());
+    SetHit(comming.getHit());
+    SetEnery_point(comming.getEnergy_point());
+    SetAttack_damage(comming.getAttck_damage());
+    std::cout<< "Frag assigne called" << std::endl;
+    return (*this);
+}
 
 FragTrap::~FragTrap(){
-    std::cout<< "scav destructor called !" << std::endl;
+    std::cout<< "Frag destructor called !" << std::endl;
 }
 
 void FragTrap::guardGate(void){

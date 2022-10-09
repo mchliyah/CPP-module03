@@ -34,10 +34,10 @@ class ClapTrap
     void SetEnery_point(int energypoint);
     void SetAttack_damage(int attackdamage);
 
-    std::string getName(void);
-    int getHit(void);
-    int getEnergy_point(void);
-    int getAttck_damage(void);
+    std::string getName(void) const ;
+    int getHit(void) const ;
+    int getEnergy_point(void) const ;
+    int getAttck_damage(void) const ;
 
     ClapTrap& operator = (const ClapTrap &comming);
     //other membre fonctions 

@@ -17,7 +17,6 @@ int main()
     FragTrap obj;
     FragTrap obj2("simo");
 
-    obj = obj2;
     std::cout << "name obj is "<< obj.getName() << " and abj2 name is "<< obj2.getName() << std::endl;
     obj.attack(" someone ");
     obj.attack("someone_else");
@@ -31,6 +30,8 @@ int main()
     std::cout << "damage " << obj.getAttck_damage() << std::endl;
     std::cout << "==========================="<< std::endl;
     obj2.beRepaired(1);
+    obj2.takeDamage(10);
+    // obj2.beRepaired(20);
 
     std::cout<< "obj2 info " << std::endl;
     std::cout <<"name  "<< obj2.getName() << std::endl;

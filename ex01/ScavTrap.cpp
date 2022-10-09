@@ -28,14 +28,14 @@ ScavTrap::ScavTrap(ScavTrap &scav){
     std::cout<< "scav coppy constructor called !" << std::endl;
 }
 
-// ScavTrap& ScavTrap::operator = (const ScavTrap &comming){
-//     Name = comming.Name;
-//     Hit= comming.Hit;
-//     Energy_points = comming.Energy_points;
-//     Attack_damage = comming.Attack_damage;
-//     std::cout<< "scav assigne called" << std::endl;
-//     return (*this);
-// }
+ScavTrap& ScavTrap::operator = (const ScavTrap &comming){
+    SetName(comming.getName());
+    SetHit(comming.getHit());
+    SetEnery_point(comming.getEnergy_point());
+    SetAttack_damage(comming.getAttck_damage());
+    std::cout<< "Frag assigne called" << std::endl;
+    return (*this);
+}
 
 ScavTrap::~ScavTrap(){
     std::cout<< "scav destructor called !" << std::endl;

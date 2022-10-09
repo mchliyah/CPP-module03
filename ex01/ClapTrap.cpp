@@ -65,19 +65,19 @@ void ClapTrap::SetAttack_damage(int attackdamage) {
     Attack_damage = attackdamage;
 }
 
-std::string ClapTrap::getName(void) {
+std::string ClapTrap::getName(void) const {
     return (this->Name);
 }
 
-int ClapTrap::getHit(void) {
+int ClapTrap::getHit(void) const {
     return (this->Hit);
 }
 
-int ClapTrap::getEnergy_point(void) {
+int ClapTrap::getEnergy_point(void) const {
     return (this->Energy_points);
 }
 
-int ClapTrap::getAttck_damage(void) {
+int ClapTrap::getAttck_damage(void) const {
     return (this->Attack_damage);
 }
 
@@ -90,7 +90,7 @@ void ClapTrap::attack(const std::string& target){
             this->Energy_points--;
         }
         else
-            std::cout<<"ClapTrap "<< this->Name<< "can't attack ."<< std::endl;
+            std::cout<<"ClapTrap "<< this->Name<< " can't attack ."<< std::endl;
     }
     else
         std::cout<< "ClapTrap "<< Name<< " already dead !" << std::endl;
@@ -99,7 +99,7 @@ void ClapTrap::attack(const std::string& target){
 void ClapTrap::takeDamage(unsigned int amount){
     if (Hit)
     {
-        std::cout << Name << "took damage of " << amount<<" points !" << std::endl;
+        std::cout << Name << " took damage of " << amount<<" points !" << std::endl;
         this->Hit -= amount;
         if (Hit <= 0) {
             Hit = 0;
@@ -111,7 +111,9 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-    if (Hit)
+    if (Hit == 100)
+        std::cout<< this->Name<< " allredy repaired !" <<  std::endl;
+    else if (Hit)
     {
         if (Energy_points)
         {
@@ -120,7 +122,7 @@ void ClapTrap::beRepaired(unsigned int amount){
             std::cout<< this->Name << " is repaired , restoring "<< amount << " Hit points" << std::endl;
         }
         else
-            std::cout<< this->Name << "cant be repaired" << std::endl;
+            std::cout<< this->Name << " cant be repaired" << std::endl;
     }
     else
         std::cout<< "ClapTrap "<< Name<< " already dead !" << std::endl;

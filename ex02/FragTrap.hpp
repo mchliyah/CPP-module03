@@ -24,7 +24,7 @@ class FragTrap : public ClapTrap
     FragTrap(FragTrap &scav);
     ~FragTrap();
 
-    // FragTrap& operator = (const FragTrap &comming);
+    FragTrap& operator = (const FragTrap &comming);
     void guardGate();
     
 
